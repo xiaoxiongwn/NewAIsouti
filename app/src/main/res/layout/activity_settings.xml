@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="AI 模型列表"
+            android:textStyle="bold"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:alpha="0.7"
+            android:textSize="13sp"
+            android:text="可以添加多个模型，拍照解题时随时切换用哪个来解答。选中「设为当前使用」的那个就是默认使用的模型。" />
+
+        <LinearLayout
+            android:id="@+id/llProfiles"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAddProfile"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="＋ 添加一个模型" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:alpha="0.7"
+            android:textSize="13sp"
+            android:text="支持任何 OpenAI 兼容接口。例如：\n• OpenAI: https://api.openai.com/v1 , 模型 gpt-4o-mini\n• 智谱 GLM: https://open.bigmodel.cn/api/paas/v4 , 模型 glm-4v-flash\n• 通义千问: https://dashscope.aliyuncs.com/compatible-mode/v1 , 模型 qwen-vl-plus\n• Kimi: https://api.moonshot.cn/v1 , 模型 moonshot-v1-8k-vision-preview\n• DeepSeek: https://api.deepseek.com/v1 , 模型 deepseek-chat\n• 火山方舟(豆包): https://ark.cn-beijing.volces.com/api/v3 ，Key 是 ark-... 开头\n  模型名可以直接填模型 ID，比如 doubao-seed-1-6-vision-250815 、doubao-1-5-vision-pro-32k-250115，\n  或者填你在控制台自己创建的接入点 ID（ep-20240xxxxxx-xxxxx），两种都可以。\n  注意：火山方舟同时有「Chat API」和更新的「Responses API」两套接口，本 App 用的是 Chat API\n  （即 /chat/completions），跟官网某些示例代码里的 client.responses.create(...) 不是一回事，\n  按上面这样填 Base URL / 模型名就行，不用改代码风格。\n\n⚠️ 拍照题目里如果有图形、图表，必须选「支持图片输入（视觉/vision）」的模型，上面除 DeepSeek 外都支持。\n\n填完可以点每个模型右上角的「测试」按钮，直接看这个模型能不能正常用、报错原因是什么。\n\n所有 Key 只保存在你手机本地。" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="24dp"
+            android:text="保存" />
+
+    </LinearLayout>
+
+</ScrollView>

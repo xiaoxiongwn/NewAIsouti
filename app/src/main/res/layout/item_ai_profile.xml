@@ -7,6 +7,7 @@
     android:padding="12dp"
     android:layout_marginTop="12dp">
 
+    <!-- 第一行：设为当前使用 + 测试 + 删除 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -20,23 +21,12 @@
             android:buttonTint="#1565C0" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="设为当前使用"
-            android:textSize="12sp"
-            android:textColor="#555555"
-            android:layout_marginEnd="8dp" />
-
-        <EditText
-            android:id="@+id/etName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="名称，如：GPT-4o"
-            android:inputType="text"
-            android:textStyle="bold"
-            android:textColor="#111111"
-            android:textColorHint="#999999" />
+            android:text="设为当前使用"
+            android:textSize="12sp"
+            android:textColor="#555555" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnTest"
@@ -55,6 +45,25 @@
             android:textColor="#CC3333" />
 
     </LinearLayout>
+
+    <!-- 名称单独占一整行，不再跟按钮挤在一起，确保能看见、能编辑 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="名称（自己起个好认的名字）"
+        android:textSize="12sp"
+        android:textColor="#555555"
+        android:layout_marginTop="8dp" />
+
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="例如：GPT-4o、豆包视觉"
+        android:inputType="text"
+        android:textStyle="bold"
+        android:textColor="#111111"
+        android:textColorHint="#999999" />
 
     <TextView
         android:layout_width="wrap_content"
